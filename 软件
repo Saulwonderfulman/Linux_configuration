@@ -1,0 +1,6 @@
+su -
+apt update
+apt upgrade -y
+apt install -y clash-verge vim vlc keepassxc syncthing adb freecad 
+apt install wemeet audacity sunloginclient
+snap install scrcpy
