@@ -2,7 +2,7 @@
 System：Debian12
 
 Desktop Environment：Gnome
-
+``````
        _,met$$$$$gg.          ruttan@debian 
     ,g$$$$$$$$$$$$$$$P.       ------------- 
   ,g$$P"     """Y$$.".        OS: Debian GNU/Linux 12 (bookworm) x86_64 
@@ -22,3 +22,4 @@ Desktop Environment：Gnome
               `"""            GPU: NVIDIA GeForce MX250 
                               GPU: Intel CometLake-U GT2 [UHD Graphics] 
                               Memory: 3594MiB / 7681MiB 
+``````
