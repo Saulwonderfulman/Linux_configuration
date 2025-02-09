@@ -7,6 +7,8 @@ Tridactyl
 wechat-need-web(github:https://github.com/lqzhgood/wechat-need-web)
 
 2 跟随桌面壁纸
+访问about:config，搜索toolkit.legacyUserProfileCustomizations.stylesheets并将其改为true。
+
 在地址栏进输入about:profiles 回车访问。
 
 打开正在使用的配置文件的根目录文件夹，新建一个名为chrome的文件夹。
