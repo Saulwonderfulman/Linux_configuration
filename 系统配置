@@ -44,7 +44,9 @@ flameshot
 keepassXC
 向日葵
 
-
+6.定时更新软件（每周日凌晨3点）
+sudo crontab -e
+0 3 * * 0 apt update && apt upgrade -y
 
 
 
