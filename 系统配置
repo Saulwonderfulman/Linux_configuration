@@ -22,6 +22,7 @@ git clone https://github.com/vinceliuice/Colloid-gtk-theme.git
 cd Colloid-gtk-theme
 ./install.sh
 rm -rf ~/Colloid-gtk-theme
+#chmod -R 755 ~/.themes/Colloid
 
 3.图标（papirus-icon-theme）
 sudo apt install papirus-icon-theme
@@ -33,4 +34,21 @@ git clone https://github.com/KaizIqbal/Bibata_Cursor.git
 cd Bibata_Cursor
 ./install.sh
 rm -rf ~/Bibata_Cursor
+设置指针大小
+gsettings set org.gnome.desktop.interface cursor-size 30
+
+5.开机自启动程序
+Fcitx5
+clash-verge
+flameshot
+keepassXC
+向日葵
+
+
+
+
+
+
+
+
 
