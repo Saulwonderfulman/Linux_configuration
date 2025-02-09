@@ -6,6 +6,10 @@ floccus bookmarks sync
 Instagram Downloader
 KeePassXC-Browser
 Tridactyl
+    bind j  scrollline 1
+    bind k  scrollline -1
+    set hintstyles.fg none
+    set hintstyles.bg none
 wechat-need-web(github:https://github.com/lqzhgood/wechat-need-web)
 
 #篡改猴脚本目录
