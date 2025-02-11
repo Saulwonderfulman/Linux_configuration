@@ -1,55 +1,54 @@
-内置
-Apps Menu
+# 内置
+## Apps Menu
 https://extensions.gnome.org/extension/6/applications-menu/
-
-User Themes
+## User Themes
 https://extensions.gnome.org/extension/19/user-themes/
 
-手动安装
-AppIndicator and KStatusNotifierItem Support（添加地址栏图标）
+# 手动安装
+## AppIndicator and KStatusNotifierItem Support（添加地址栏图标）
 https://extensions.gnome.org/extension/615/appindicator-support/
 
-Bing Wallpaper
+## Bing Wallpaper
 https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/
 
-Bluetooth Quick Connect
+## Bluetooth Quick Connect
 https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
 
-Blur my Shell
+## Blur my Shell
 https://extensions.gnome.org/extension/3193/blur-my-shell/
 
-Clipboard Indicator
+## Clipboard Indicator
 https://extensions.gnome.org/extension/779/clipboard-indicator/
 
-Compiz alike magic lamp effect
+## Compiz alike magic lamp effect
 https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/
 
-Coverflow Alt-Tab
+## Coverflow Alt-Tab
 https://extensions.gnome.org/extension/97/coverflow-alt-tab/
 
-Dash to Dock
+## Dash to Dock
 
 https://extensions.gnome.org/extension/307/dash-to-dock/
 
-Desktop Icons NG (DING)（允许在桌面上放置文件）
+## Desktop Icons NG (DING)（允许在桌面上放置文件）
 
 https://extensions.gnome.org/extension/2087/desktop-icons-ng-ding/
 
-GNOME Fuzzy App Search
+## GNOME Fuzzy App Search
 
 https://extensions.gnome.org/extension/3956/gnome-fuzzy-app-search/
 
-Inactivity（隐藏左上角的活动）
+## Inactivity（隐藏左上角的活动）
 https://extensions.gnome.org/extension/4818/inactivity/
 
-Input Method Panel（让输入法跟随暗色模式）
+## Input Method Panel（让输入法跟随暗色模式）
 https://extensions.gnome.org/extension/261/kimpanel/
 
-Night Theme Switcher
+## Night Theme Switcher
 https://extensions.gnome.org/extension/2236/night-theme-switcher/
 
-OpenWeather
+## OpenWeather
 https://extensions.gnome.org/extension/750/openweather/
 
-Remove App Menu（移除活动程序提醒）
+## Remove App Menu（移除活动程序提醒）
 https://extensions.gnome.org/extension/3906/remove-app-menu/
