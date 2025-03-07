@@ -13,8 +13,6 @@ Dark Reader
 
 floccus bookmarks sync
 
-Instagram Downloader
-
 KeePassXC-Browser
 
 Tridactyl
@@ -24,8 +22,11 @@ Tridactyl
     set hintstyles.fg none
     set hintstyles.bg none
     set smoothscroll true
-    
-wechat-need-web(github:https://github.com/lqzhgood/wechat-need-web)
+
+
+#Instagram Downloader
+
+#wechat-need-web(github:https://github.com/lqzhgood/wechat-need-web)
 
 # 2.firefox配置
 
