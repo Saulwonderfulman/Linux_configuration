@@ -68,13 +68,7 @@ keepassXC
 向日葵
 ``````
 
-# 6.定时更新软件（每周日凌晨3点）
-``````
-sudo crontab -e
-0 3 * * 0 apt update && apt upgrade -y
-``````
-
-# 7.自定义快捷键
+# 6.自定义快捷键
 ``````
 快捷启动终端：命令：/usr/bin/gnome-terminal，快捷键：ctrl+alt+t
 快捷截图：命令：flameshot gui，快捷键：F1
