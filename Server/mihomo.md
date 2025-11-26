@@ -17,7 +17,7 @@ sudo chmod +x clash
 https://yacd.metacubex.one/
 
 更新订阅链接命令
-
+wget -U "Mozilla/6.0" -O ~/.config/mihomo/config.yaml Clash订阅链接网址
 # 2. 系统代理设置
 sudo vim /etc/environment
 
