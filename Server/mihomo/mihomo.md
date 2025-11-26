@@ -56,7 +56,13 @@ systemctl start mihomo
 ```
 systemctl status mihomo
 ```
-## 更新订阅链接命令
+## 定期更新订阅
+sudo crontab -e
+
+0 4 * * * curl -L -o ~/.config/mihomo/config.yaml -A "clash" Clash订阅链接网址; systemctl reload mihomo
+
+更新订阅链接命令
+
 wget -U "Mozilla/6.0" -O ~/.config/mihomo/config.yaml Clash订阅链接网址
 # 2. 系统代理设置
 sudo vim /etc/environment
