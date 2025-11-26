@@ -3,13 +3,16 @@ sudo mkdir ~/mihomo
 
 cd ~/mihomo
 
-cp /mnt/usb  ~/mihomo
+cp /mnt/usb/  ~/mihomo/
 
-cp /mnt/usb  ~/mihomo
+./mihomo-linux-arm64
+运行几分钟后关闭
 
-cp /mnt/usb  ~/mihomo
+cp /mnt/usb/Country.mmdb  ~/.config/mihomo/
 
-cp /mnt/usb  ~/mihomo
+cp /mnt/usb/geosite.dat  ~/.config/mihomo/
+
+cp /mnt/usb/  ~/mihomo/
 
 sudo chmod +x clash
 
