@@ -3,7 +3,10 @@ sudo mkdir ~/mihomo
 
 cd ~/mihomo
 
-cp /mnt/usb/  ~/mihomo/
+cp /mnt/usb/mihomo-linux-arm64  ~/mihomo/
+软件版本为v1.19.16
+
+sudo chmod +x mihomo-linux-arm64
 
 ./mihomo-linux-arm64
 运行几分钟后关闭
@@ -12,9 +15,7 @@ cp /mnt/usb/Country.mmdb  ~/.config/mihomo/
 
 cp /mnt/usb/geosite.dat  ~/.config/mihomo/
 
-cp /mnt/usb/  ~/mihomo/
-
-sudo chmod +x clash
+./mihomo-linux-arm64
 
 后续通过在线页面进行配置
 https://yacd.metacubex.one/
@@ -26,11 +27,11 @@ sudo vim /etc/environment
 
 更改以下内容并粘贴
 
-http_proxy="http://your_proxy_server:proxy_port"
+http_proxy="127.0.0.1:7890"
 
-https_proxy="http://your_proxy_server:proxy_port"
+https_proxy="127.0.0.1:7890"
 
-ftp_proxy="http://your_proxy_server:proxy_port"
+ftp_proxy="127.0.0.1:7890"
 
 重启后生效
 
@@ -43,9 +44,9 @@ sudo vim /etc/systemd/system/docker.service.d/http-proxy.conf
 ## 3.2 配置代理
 [Service]
 
-Environment="HTTP_PROXY=127.0.0.1:7890"
+Environment="HTTP_PROXY=127.0.0.1:7892"
 
-Environment="HTTPS_PROXY=127.0.0.1:7890"
+Environment="HTTPS_PROXY=127.0.0.1:7892"
 
 Environment="NO_PROXY=localhost,127.0.0.1"
 
