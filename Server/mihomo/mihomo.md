@@ -17,7 +17,7 @@ cp /mnt/usb/geosite.dat  ~/.config/mihomo/
 
 ./mihomo-linux-arm64
 
-后续通过在线页面进行配置
+后续通过在线页面进行配置,端口转发127.0.0.1:9090
 https://yacd.metacubex.one/
 
 更新订阅链接命令
