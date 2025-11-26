@@ -23,3 +23,32 @@ Desktop Environment：Gnome
                               GPU: Intel CometLake-U GT2 [UHD Graphics] 
                               Memory: 3594MiB / 7681MiB 
 ``````
+
+System：Debian12@Server
+``````
+       _,met$$$$$gg.          orangepi@orangepi3b 
+    ,g$$$$$$$$$$$$$$$P.       ------------------- 
+  ,g$$P"     """Y$$.".        OS: Debian GNU/Linux 12 (bookworm) aarch64 
+ ,$$P'              `$$$.     Host: Rockchip RK3566 OPi 3B 
+',$$P       ,ggs.     `$$b:   Kernel: 5.10.160-rockchip-rk356x 
+`d$$'     ,$P"'   .    $$$    Uptime: 32 mins 
+ $$P      d$'     ,    $$P    Packages: 814 (dpkg) 
+ $$:      $$.   -    ,d$$'    Shell: bash 5.2.15 
+ $$;      Y$b._   _,d$P'      Theme: Adwaita [GTK3] 
+ Y$$.    `.`"Y$$$$P"'         Icons: Adwaita [GTK3] 
+ `$$b      "-.__              Terminal: /dev/pts/0 
+  `Y$$                        CPU: (4) @ 1.800GHz 
+   `Y$$.                      Memory: 890MiB / 7689MiB 
+     `$$b.
+       `Y$$b.                                         
+          `"Y$b._                                     
+              `"""
+``````
+
+
+
+
+
+
+
+
