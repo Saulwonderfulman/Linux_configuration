@@ -73,23 +73,12 @@ ftp_proxy="127.0.0.1:7890"
 ```
 重启后生效
 
-# 3. docker代理设置
-## 3.1 创建配置文件
-sudo mkdir -p /etc/systemd/system/docker.service.d
+# 3. 允许局域网连接
+进入在线页面进行配置https://yacd.metacubex.one/
 
-sudo vim /etc/systemd/system/docker.service.d/http-proxy.conf
+开启允许局域网连接，目的是运行docker使用代理
 
-## 3.2 配置代理
-```
-[Service]
-Environment="HTTP_PROXY=127.0.0.1:7890"
-Environment="HTTPS_PROXY=127.0.0.1:7890"
-Environment="NO_PROXY=localhost,127.0.0.1"
-```
-## 3.3 重新加载系统守护进程并重启Docker
-sudo systemctl daemon-reload
 
-sudo systemctl restart docker
 
 
 
