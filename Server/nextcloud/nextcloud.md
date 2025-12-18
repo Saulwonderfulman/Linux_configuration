@@ -32,6 +32,7 @@ services:
       - db
     volumes:
       - ./data:/var/www/html
+      - /mnt/NVMe:/NVMe
     environment:
       - MYSQL_PASSWORD=nextcloud_password      # 必须与上面设置的一致
       - MYSQL_DATABASE=nextcloud
@@ -55,6 +56,30 @@ docker compose up -d
 ```
 sudo docker exec --user www-data nextcloud-app-1 php occ config:system:set trusted_domains 1 --value="*.*.*.*:8080"
 ```
+## 启用“外部存储”功能
+点击右上角头像 -> 应用 (Apps)。
+
+在左侧选择“已禁用的应用”或直接搜索 “External storage support”，点击 启用 (Enable)。
+
+添加本地挂载点：
+
+点击右上角头像 -> 管理设置 (Administration settings)。
+
+在左侧侧边栏底部找到 外部存储 (External storage)。
+
+配置信息填写如下：
+
+文件夹名称：自定义（例如“我的硬盘照片”），这将显示在你的文件列表中。
+
+外部存储：在下拉菜单选择 “本地 (Local)”。
+
+认证：无。
+
+配置：填写设置的容器内路径（例如 /NVMe）。
+
+可用范围：选择哪些用户或组可以看到这个文件夹（默认是所有人）。
+
+保存： 点击最右侧的 打勾图标。如果左侧出现 绿色圆点，说明配置成功。
 
 ## 安装扩展应用
 https://memories.gallery/
