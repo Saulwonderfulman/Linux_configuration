@@ -32,16 +32,22 @@ services:
       - db
     volumes:
       - ./data:/var/www/html
-      - /mnt/NVMe:/NVMe
+      - /mnt/NVMe:/NVMe      # 外部储存位置
     environment:
       - MYSQL_PASSWORD=nextcloud_password      # 必须与上面设置的一致
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=db
+      # --- 代理配置开始 ---
+      - http_proxy=http://172.17.0.1:7890
+      - https_proxy=http://172.17.0.1:7890
+      - no_proxy=localhost,127.0.0.1,db
+      # --- 代理配置结束 ---
+
 ```
 启动容器
 ```
-docker compose up -d
+sudo docker compose up -d
 ```
 进入后台后数据库配置，选择MySQL/MariaDB
 |输入框名称|填写内容|对应 YAML 里的项|
