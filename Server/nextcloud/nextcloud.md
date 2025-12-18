@@ -1,9 +1,9 @@
-# nextcloud安装
-创建 Nextcloud 配置的目录，并进入该目录
+# 1. nextcloud安装
+1.1 创建 Nextcloud 配置的目录，并进入该目录
 ```
 mkdir ~/nextcloud && cd ~/nextcloud
 ```
-创建 docker-compose.yml 配置文件并编辑
+1.2 创建 docker-compose.yml 配置文件并编辑
 ```
 nano docker-compose.yml
 ```
@@ -45,7 +45,7 @@ services:
       # --- 代理配置结束 ---
 
 ```
-启动容器
+1.3 启动容器
 ```
 sudo docker compose up -d
 ```
@@ -57,12 +57,12 @@ sudo docker compose up -d
 |数据库名称|nextcloud|MYSQL_DATABASE|
 |数据库主机|db|services 下的名称|
 
-# nextcloud配置
-## 设置不限制ip访问
+# 2. nextcloud配置
+## 2.1 设置不限制ip访问
 ```
 sudo docker exec --user www-data nextcloud-app-1 php occ config:system:set trusted_domains 1 --value="*.*.*.*:8080"
 ```
-## 启用“外部存储”功能
+## 2.2 启用“外部存储”功能
 点击右上角头像 -> 应用 (Apps)。
 
 在左侧选择“已禁用的应用”或直接搜索 “External storage support”，点击 启用 (Enable)。
@@ -87,12 +87,16 @@ sudo docker exec --user www-data nextcloud-app-1 php occ config:system:set trust
 
 保存： 点击最右侧的 打勾图标。如果左侧出现 绿色圆点，说明配置成功。
 
-## 安装扩展应用
+## 2.3 安装扩展应用
 https://memories.gallery/
 
-
-
-
+安装完成后执行以下命令对图库进行更新
+```
+# 第一步：让 Nextcloud 发现外部存储中的文件
+docker compose exec -u www-data app php occ files:scan --all
+# 第二步：让 Memories 专门索引这些照片（提取时间、地点、缩略图）
+docker compose exec -u www-data app php occ memories:index
+```
 
 
 
