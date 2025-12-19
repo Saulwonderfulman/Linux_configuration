@@ -93,9 +93,9 @@ https://memories.gallery/
 安装完成后执行以下命令对图库进行更新
 ```
 # 第一步：让 Nextcloud 发现外部存储中的文件
-docker compose exec -u www-data app php occ files:scan --all
+sudo docker compose exec -u www-data app php occ files:scan --all
 # 第二步：让 Memories 专门索引这些照片（提取时间、地点、缩略图）
-docker compose exec -u www-data app php occ memories:index
+sudo docker compose exec -u www-data app php occ memories:index
 ```
 
 
