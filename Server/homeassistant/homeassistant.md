@@ -23,6 +23,7 @@ services:
 
 sudo docker compose up -d
 
+网页界面：localhost:8123
 # 2. homeassistant配置
 
 
