@@ -20,7 +20,7 @@ services:
       # Do not edit the next line. If you want to change the media storage location on your system, edit the value of UPLOAD_LOCATION in the .env file
       - ${UPLOAD_LOCATION}:/data
       - /etc/localtime:/etc/localtime:ro
-      - /home/ruttan/图片:/mnt/my-photo-library:ro 
+      - /home/ruttan/图片:/mnt/my-photo-library
       # >>>>>>>>>>>> 上述这一行是外部图库路径 <<<<<<<<<<<<<
     env_file:
       - .env
@@ -33,21 +33,21 @@ services:
     healthcheck:
       disable: false
 
-  immich-machine-learning:
-    container_name: immich_machine_learning
-    # For hardware acceleration, add one of -[armnn, cuda, rocm, openvino, rknn] to the image tag.
-    # Example tag: ${IMMICH_VERSION:-release}-cuda
-    image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}
-    # extends: # uncomment this section for hardware acceleration - see https://docs.immich.app/features/ml-hardware-acceleration
-    #   file: hwaccel.ml.yml
-    #   service: cpu # set to one of [armnn, cuda, rocm, openvino, openvino-wsl, rknn] for accelerated inference - use the `-wsl` version for WSL2 where applicable
-    volumes:
-      - model-cache:/cache
-    env_file:
-      - .env
-    restart: always
-    healthcheck:
-      disable: false
+  # immich-machine-learning:
+  #   container_name: immich_machine_learning
+  #   # For hardware acceleration, add one of -[armnn, cuda, rocm, openvino, rknn] to the image tag.
+  #   # Example tag: ${IMMICH_VERSION:-release}-cuda
+  #   image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}
+  #   # extends: # uncomment this section for hardware acceleration - see https://docs.immich.app/features/ml-hardware-acceleration
+  #   #   file: hwaccel.ml.yml
+  #   #   service: cpu # set to one of [armnn, cuda, rocm, openvino, openvino-wsl, rknn] for accelerated inference - use the `-wsl` version for WSL2 where applicable
+  #   volumes:
+  #     - model-cache:/cache
+  #   env_file:
+  #     - .env
+  #   restart: always
+  #   healthcheck:
+  #     disable: false
 
   redis:
     container_name: immich_redis
