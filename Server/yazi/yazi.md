@@ -1,0 +1,13 @@
+# 1. 安装
+## 下载并添加 GPG 密钥
+curl -sS https://debian.griffo.io/EA0F721D231FDD3A0A17B9AC7808B4DD62C41256.asc | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/debian.griffo.io.gpg
+## 添加仓库源并安装
+```
+echo "deb https://debian.griffo.io/apt $(lsb_release -sc 2>/dev/null) main" | sudo tee /etc/apt/sources.list.d/debian.griffo.io.list
+sudo apt update
+sudo apt install yazi
+```
+# 2. 配置
+vim ~/.config/yazi/yazi.toml
+vim ~/.config/yazi/theme.toml
+
