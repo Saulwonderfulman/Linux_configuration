@@ -1,0 +1,7 @@
+[icon]
+# 清空默认图标规则
+globs = []
+dirs  = []
+files = []
+exts  = []
+conds = []
