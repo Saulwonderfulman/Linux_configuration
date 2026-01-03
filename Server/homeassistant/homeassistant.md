@@ -15,7 +15,7 @@ services:
     volumes:
       - ./config:/config
       - /etc/localtime:/etc/localtime:ro
-    restart: unless-stopped
+    restart: always
     privileged: true
     network_mode: host
 ```
