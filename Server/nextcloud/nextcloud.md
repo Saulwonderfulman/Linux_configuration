@@ -8,8 +8,6 @@ mkdir ~/nextcloud && cd ~/nextcloud
 nano docker-compose.yml
 ```
 ```
-version: '3'
-
 services:
   db:
     image: mariadb:10.11
@@ -18,31 +16,54 @@ services:
     volumes:
       - ./db:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=your_root_password  # 请替换为强密码
-      - MYSQL_PASSWORD=nextcloud_password      # 请替换为强密码
+      - MYSQL_ROOT_PASSWORD=ruttan
+      - MYSQL_PASSWORD=0
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
+    networks:
+      - nextcloud_net
 
   app:
     image: nextcloud:latest
     restart: always
     ports:
       - 8080:80
-    links:
+    depends_on:
       - db
+      - onlyoffice
     volumes:
       - ./data:/var/www/html
-      - /mnt/NVMe:/NVMe      # 外部储存位置
+      - /mnt/NVMe:/NVMe
     environment:
-      - MYSQL_PASSWORD=nextcloud_password      # 必须与上面设置的一致
+      - MYSQL_PASSWORD=0
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=db
-      # --- 代理配置开始 ---
+      # 代理
       - http_proxy=http://172.17.0.1:7890
       - https_proxy=http://172.17.0.1:7890
-      - no_proxy=localhost,127.0.0.1,db
-      # --- 代理配置结束 ---
+      - no_proxy=localhost,127.0.0.1,db,onlyoffice
+    networks:
+      - nextcloud_net
+
+  onlyoffice:
+    image: onlyoffice/documentserver:latest
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - JWT_ENABLED=true
+      - JWT_SECRET=ruttan
+      - JWT_HEADER=Authorization
+    volumes:
+      - ./onlyoffice/data:/var/www/onlyoffice/Data
+      - ./onlyoffice/logs:/var/log/onlyoffice
+    networks:
+      - nextcloud_net
+
+networks:
+  nextcloud_net:
+    driver: bridge
 
 ```
 1.3 启动容器
@@ -65,7 +86,7 @@ sudo docker compose exec -u www-data app php occ db:add-missing-indices
 
 ### 2.0.2 解决“Mimetype 迁移”，随着 Nextcloud 版本升级，系统需要更新文件类型的映射关系
 
-docker compose exec -u www-data app php occ maintenance:repair --include-expensive
+sudo docker compose exec -u www-data app php occ maintenance:repair --include-expensive
 
 ### 2.0.3 管理设置-基本设置-后台任务选择Cron并使用root权限执行自动任务
 
@@ -103,8 +124,7 @@ sudo docker exec --user www-data nextcloud-app-1 php occ config:system:set trust
 保存： 点击最右侧的 打勾图标。如果左侧出现 绿色圆点，说明配置成功。
 
 ## 2.3 安装扩展应用
-https://memories.gallery/
-
+## 2.3.1 memories
 安装完成后执行以下命令对图库进行更新
 ```
 # 第一步：让 Nextcloud 发现外部存储中的文件
@@ -112,9 +132,11 @@ sudo docker compose exec -u www-data app php occ files:scan --all
 # 第二步：让 Memories 专门索引这些照片（提取时间、地点、缩略图）
 sudo docker compose exec -u www-data app php occ memories:index
 ```
-
-
-
+## 2.3.2 onlyoffice
+```
+ONLYOFFICE Docs地址:http://localhost:8081/
+秘钥(留空为关闭):ruttan
+```
 
 
 
