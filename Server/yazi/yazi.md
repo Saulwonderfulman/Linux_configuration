@@ -9,5 +9,6 @@ sudo apt install yazi
 ```
 # 2. 配置
 vim ~/.config/yazi/yazi.toml
+
 vim ~/.config/yazi/theme.toml
 
