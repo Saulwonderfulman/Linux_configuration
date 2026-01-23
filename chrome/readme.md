@@ -23,11 +23,6 @@ Tridactyl
     set hintstyles.bg none
     set smoothscroll true
 
-
-#Instagram Downloader
-
-#wechat-need-web(github:https://github.com/lqzhgood/wechat-need-web)
-
 # 2.firefox配置
 
 访问about:config，搜索toolkit.legacyUserProfileCustomizations.stylesheets并将其改为true。
