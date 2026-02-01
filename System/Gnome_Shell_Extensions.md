@@ -30,10 +30,6 @@ https://extensions.gnome.org/extension/97/coverflow-alt-tab/
 
 https://extensions.gnome.org/extension/307/dash-to-dock/
 
-## Desktop Icons NG (DING)（允许在桌面上放置文件）
-
-https://extensions.gnome.org/extension/2087/desktop-icons-ng-ding/
-
 ## GNOME Fuzzy App Search
 
 https://extensions.gnome.org/extension/3956/gnome-fuzzy-app-search/
