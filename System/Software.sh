@@ -1,5 +1,5 @@
 #自由软件
-apt install -y clash-verge vim vlc keepassxc syncthing adb freecad flameshot neofetch btop gnome-boxes supertuxkart fceux cutecom vscodium pulseview gimp gocryptfs flatpak
+apt install -y clash-verge vim vlc keepassxc syncthing nextcloud-desktop adb freecad flameshot neofetch btop gnome-boxes supertuxkart fceux cutecom vscodium pulseview gimp gocryptfs flatpak
 
 # 添加Flathub 仓库
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
