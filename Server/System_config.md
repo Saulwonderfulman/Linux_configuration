@@ -1,8 +1,81 @@
 # 1. 定期备份数据
-0 3 * * 1 rsync -a --delete /M.2硬盘路径/ /机械硬盘路径/
+## 1 创建备份脚本
+sudo vim /usr/local/bin/hdd_backup.sh
 
-#crontab每周一凌晨3点进行备份
+```
+#!/bin/bash
+set -e
 
+BACKUP_SOURCE="/home/你的用户名/要备份的目录"
+DEVICE="$1"
+
+# 等待自动挂载完成
+sleep 3
+
+# 获取挂载点
+MOUNT_POINT=$(lsblk -no MOUNTPOINT "$DEVICE")
+
+if [ -z "$MOUNT_POINT" ]; then
+    exit 1
+fi
+
+mkdir -p "$MOUNT_POINT/backup"
+
+rsync -a --delete --inplace --no-whole-file "$BACKUP_SOURCE"/ "$MOUNT_POINT/backup/"
+
+sync
+
+# 卸载
+umount "$DEVICE"
+
+# 安全断电
+udisksctl power-off -b "$DEVICE"
+```
+授权
+
+sudo chmod +x /usr/local/bin/hdd_backup.sh
+## 2 创建 systemd 服务
+sudo vim /etc/systemd/system/hdd-backup@.service
+
+```
+[Unit]
+Description=HDD Backup Service for %I
+After=dev-%i.device
+Requires=dev-%i.device
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/hdd_backup.sh /dev/%I
+TimeoutStartSec=0
+```
+
+## 3 设置触发规则
+sudo vim /etc/udev/rules.d/99-hdd-backup.rules
+```
+ACTION=="add", SUBSYSTEM=="block", ENV{DEVTYPE}=="partition", ENV{ID_FS_UUID}=="你的UUID", TAG+="systemd", ENV{SYSTEMD_WANTS}="hdd-backup@%k.service"
+```
+重载配置
+sudo udevadm control --reload
+sudo systemctl daemon-reload
+
+## #临时禁用与彻底禁用
+临时禁用
+
+sudo systemctl mask hdd-backup@.service
+
+恢复
+
+sudo systemctl unmask hdd-backup@.service
+
+彻底禁用
+```
+sudo rm /etc/udev/rules.d/99-hdd-backup.rules
+sudo rm /etc/systemd/system/hdd-backup@.service
+sudo rm /usr/local/bin/hdd_backup.sh
+
+sudo udevadm control --reload
+sudo systemctl daemon-reload
+```
 # 2. 配置散热风扇pwm
 ## 找到设备树文件rk3566-orangepi-3b.dtb
 cd /boot/dtb/rockchip
