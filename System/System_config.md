@@ -76,3 +76,38 @@ keepassXC
 
 
 
+
+sudo vim /etc/default/grub
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=0
+GRUB_TIMEOUT_STYLE=hidden
+GRUB_DISABLE_OS_PROBER=true
+
+sudo update-grub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
