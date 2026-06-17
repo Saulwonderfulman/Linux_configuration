@@ -1,16 +1,3 @@
-# 1.将F区设置为功能键优先
-``````
-echo options hid_apple fnmode=2 | sudo tee -a /etc/modprobe.d/hid_apple.conf
-sudo update-initramfs -u -k all
-sudo reboot
-``````
-
-恢复原来设置
-``````
-#sudo update-initramfs -u -k all
-#sudo reboot
-``````
-
 # 2.主题（Colloid-gtk-theme）
 ## 安装tweaks工具
 ``````
@@ -71,12 +58,12 @@ keepassXC
 # 6.自定义快捷键
 ``````
 快捷启动终端：命令：/usr/bin/gnome-terminal，快捷键：ctrl+alt+t
-快捷截图：命令：flameshot gui，快捷键：F1
+快捷截图：命令：sh -c "flameshot gui"，快捷键：F1
 ``````
 
 
 
-
+# 跳过引导界面
 sudo vim /etc/default/grub
 
 GRUB_DEFAULT=0
