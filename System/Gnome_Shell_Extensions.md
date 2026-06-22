@@ -21,3 +21,6 @@ https://extensions.gnome.org/extension/307/dash-to-dock/
 
 ## Night Theme Switcher
 https://extensions.gnome.org/extension/2236/night-theme-switcher/
+
+## Coverflow Alt-Tab
+https://extensions.gnome.org/extension/97/coverflow-alt-tab/
