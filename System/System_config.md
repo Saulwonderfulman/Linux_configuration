@@ -39,6 +39,22 @@ sudo apt install bibata-cursor-theme
 ## 设置指针大小
 gsettings set org.gnome.desktop.interface cursor-size 30
 
+# 字体
+## 安装并刷新缓存
+``````
+sudo apt install fonts-noto-cjk fonts-jetbrains-mono
+fc-cache -fv
+``````
+## 设置字体
+``````
+界面字体：Noto Sans CJK SC Regular 12
+文档字体：Noto Sans CJK SC Regular 12
+等宽字体：JetBrains Mono Regular 12
+窗口标题：Noto Sans CJK SC Medium 10
+缩放：1.25
+``````
+
+
 # 5.开机自启动程序
 ``````
 Fcitx5
