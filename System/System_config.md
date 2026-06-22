@@ -1,3 +1,10 @@
+# fcitx5 []快捷键切换
+配置-附加组件-（输入法）拼音
+
+以次定字快捷键删除，上一页下一页快捷键加入[]
+
+
+
 # 2.主题（Colloid-gtk-theme）
 ## 安装tweaks工具
 sudo apt install gnome-tweaks
