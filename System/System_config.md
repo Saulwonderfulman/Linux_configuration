@@ -1,9 +1,12 @@
-# fcitx5 []快捷键切换
+# fcitx5 配置
+## []快捷键切换
 配置-附加组件-（输入法）拼音
 
 以次定字快捷键删除，上一页下一页快捷键加入[]
+## 跟随暗色主题
+配置-附加组件-经典用户界面
 
-
+深色主题修改为默认深色，勾选跟随系统浅色深色设置
 
 # 2.主题（Colloid-gtk-theme）
 ## 安装tweaks工具
@@ -16,29 +19,21 @@ sudo apt install git sassc gtk2-engines-murrine gnome-themes-extra
 git clone https://github.com/vinceliuice/Colloid-gtk-theme.git
 
 ## 安装后删除
+``````
 cd Colloid-gtk-theme
-
 ./install.sh -l
-## 解决 GTK4 应用不跟随主题
-ln -sf ~/.themes/Colloid/gtk-4.0/assets ~/.config/gtk-4.0/assets
-
-ln -sf ~/.themes/Colloid/gtk-4.0/gtk.css ~/.config/gtk-4.0/gtk.css
-
-ln -sf ~/.themes/Colloid/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0/gtk-dark.css
-
 /# rm -rf ~/Colloid-gtk-theme
+``````
 ## Flatpak 应用继承主题
+``````
 sudo flatpak override --filesystem=xdg-config/gtk-3.0
-
 sudo flatpak override --filesystem=xdg-config/gtk-4.0
-
 flatpak override --user --filesystem=~/.themes
-
+``````
 # 3.图标（papirus-icon-theme）
 sudo apt install papirus-icon-theme
 
 # 4.鼠标指针主题（Bibata Modern Classic）
-
 ## 安装
 sudo apt install bibata-cursor-theme
 ## 设置指针大小
