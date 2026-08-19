@@ -92,7 +92,23 @@ sudo vim ~/.config/autostart/org.keepassxc.KeePassXC.desktop
 修改为 Exec=keepassxc -platform xcb
 
 
-
+[Desktop Entry]
+Name=KeePassXC
+GenericName=密码管理器
+Exec=keepassxc -platform xcb
+TryExec=keepassxc
+Icon=keepassxc
+StartupWMClass=keepassxc
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0
+Categories=Utility;Security;Qt;
+MimeType=application/x-keepass2;
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=2
+X-KDE-autostart-after=panel
+X-LXQt-Need-Tray=true
 
 
 
