@@ -1,4 +1,4 @@
-# fcitx5 配置
+# 1.fcitx5 配置
 ## []快捷键切换
 配置-附加组件-（输入法）拼音
 
@@ -39,7 +39,7 @@ sudo apt install bibata-cursor-theme
 ## 设置指针大小
 gsettings set org.gnome.desktop.interface cursor-size 30
 
-# 字体
+# 5.字体
 ## 安装并刷新缓存
 ``````
 sudo apt install fonts-noto-cjk fonts-jetbrains-mono
@@ -54,23 +54,21 @@ fc-cache -fv
 缩放：1.25
 ``````
 
-
-# 5.开机自启动程序
+# 6.开机自启动程序
 ``````
 Fcitx5
 clash-verge
 flameshot
-keepassXC
-向日葵
+keepassXC #自行配置启动文件
 ``````
 
-# 6.自定义快捷键
+# 7.自定义快捷键
 ``````
 快捷启动终端：命令：/usr/bin/gnome-terminal，快捷键：ctrl+alt+t
 快捷截图：命令：sh -c "flameshot gui"，快捷键：F1
 ``````
 
-# 跳过引导界面
+# 8.跳过引导界面
 sudo vim /etc/default/grub
 ``````
 GRUB_DEFAULT=0
@@ -81,12 +79,12 @@ GRUB_DISABLE_OS_PROBER=true
 sudo update-grub
 
 
-## 修复KeepassXC无法输入字符
-# 主启动器
+# 9.修复KeepassXC无法输入字符
+## 主启动器
 sudo vim /usr/share/applications/org.keepassxc.KeePassXC.desktop
 
 修改为 Exec=keepassxc -platform xcb %f
-# 自启动
+## 自启动
 在软件中取消自启动设置，手动配置自启动文件
 
 vim ~/.config/autostart/org.keepassxc.KeePassXC.desktop
