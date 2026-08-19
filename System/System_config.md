@@ -81,12 +81,15 @@ GRUB_DISABLE_OS_PROBER=true
 sudo update-grub
 
 
+## 修复KeepassXC无法输入字符
+# 主启动器
+sudo vim /usr/share/applications/org.keepassxc.KeePassXC.desktop
 
+修改为 Exec=keepassxc -platform xcb %f
+# 自启动
+sudo vim ~/.config/autostart/org.keepassxc.KeePassXC.desktop
 
-
-
-
-
+修改为 Exec=keepassxc -platform xcb
 
 
 
