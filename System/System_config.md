@@ -87,11 +87,10 @@ sudo vim /usr/share/applications/org.keepassxc.KeePassXC.desktop
 
 修改为 Exec=keepassxc -platform xcb %f
 # 自启动
-sudo vim ~/.config/autostart/org.keepassxc.KeePassXC.desktop
+在软件中取消自启动设置，手动配置自启动文件
 
-修改为 Exec=keepassxc -platform xcb
-
-
+vim ~/.config/autostart/org.keepassxc.KeePassXC.desktop
+``````
 [Desktop Entry]
 Name=KeePassXC
 GenericName=密码管理器
@@ -109,7 +108,7 @@ X-GNOME-Autostart-enabled=true
 X-GNOME-Autostart-Delay=2
 X-KDE-autostart-after=panel
 X-LXQt-Need-Tray=true
-
+``````
 
 
 
