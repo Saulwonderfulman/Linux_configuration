@@ -15,7 +15,7 @@ cp /mnt/usb/geosite.dat  ~/.config/mihomo/
 
 ./mihomo-linux-arm64      #测试，成功运行后停止。
 
-后续通过在线页面进行配置,端口转发127.0.0.1:9090，
+后续通过在线页面进行配置,端口转发127.0.0.1:9090（要用隧道），
 https://yacd.metacubex.one/
 
 ## 配置进程守护
