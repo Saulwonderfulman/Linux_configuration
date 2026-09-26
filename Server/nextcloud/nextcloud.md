@@ -30,7 +30,6 @@ services:
       - 8080:80
     depends_on:
       - db
-      - onlyoffice
     volumes:
       - ./data:/var/www/html
       - /mnt/NVMe:/NVMe
@@ -42,22 +41,7 @@ services:
       # 代理
       - http_proxy=http://172.17.0.1:7890
       - https_proxy=http://172.17.0.1:7890
-      - no_proxy=localhost,127.0.0.1,db,onlyoffice
-    networks:
-      - nextcloud_net
-
-  onlyoffice:
-    image: onlyoffice/documentserver:latest
-    restart: always
-    ports:
-      - 8081:80
-    environment:
-      - JWT_ENABLED=true
-      - JWT_SECRET=ruttan
-      - JWT_HEADER=Authorization
-    volumes:
-      - ./onlyoffice/data:/var/www/onlyoffice/Data
-      - ./onlyoffice/logs:/var/log/onlyoffice
+      - no_proxy=localhost,127.0.0.1,db
     networks:
       - nextcloud_net
 
@@ -124,19 +108,11 @@ sudo docker exec --user www-data nextcloud-app-1 php occ config:system:set trust
 保存： 点击最右侧的 打勾图标。如果左侧出现 绿色圆点，说明配置成功。
 
 ## 2.3 安装扩展应用
-## 2.3.1 memories
-安装完成后执行以下命令对图库进行更新
-```
-# 第一步：让 Nextcloud 发现外部存储中的文件
-sudo docker compose exec -u www-data app php occ files:scan --all
-# 第二步：让 Memories 专门索引这些照片（提取时间、地点、缩略图）
-sudo docker compose exec -u www-data app php occ memories:index
-```
-## 2.3.2 onlyoffice
-```
-ONLYOFFICE Docs地址:http://localhost:8081/
-秘钥(留空为关闭):ruttan
-```
+music
+
+
+
+
 
 
 
